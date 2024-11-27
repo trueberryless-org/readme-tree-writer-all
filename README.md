@@ -1,17 +1,17 @@
 > This action originates from [shirakiya/readme-tree-writer](https://github.com/shirakiya/readme-tree-writer). The only difference is that this action includes all files except .git folder. See [this repos command execution](https://github.com/trueberryless-org/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs) vs [shirakiya's repos command execution](https://github.com/shirakiya/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs).
 
-# readme-tree-writer
+# readme-tree-writer-all
 
 GitHub Action to write the output of "tree" command to each README in your project.
 
-Here is a [sample repository using this action](https://github.com/shirakiya/readme-tree-writer-sample).
+Here is a [sample repository using the original action](https://github.com/shirakiya/readme-tree-writer-sample).
 
 ## Usage
 
 Apply to `uses` in workflow config like below.
 
 ```yaml
-- uses: shirakiya/readme-tree-writer@v1
+- uses: trueberryless-org/readme-tree-writer-all@v2
 ```
 
 ### Example workflow
@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Write tree outputs to README.md
-        uses: shirakiya/readme-tree-writer@v1
+        uses: trueberryless-org/readme-tree-writer-all@v2
         with:
           config_path: .github/readmetreerc.yml
       - name: Check diff
@@ -172,7 +172,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Write tree outputs to README.md
-        uses: shirakiya/readme-tree-writer@v1
+        uses: trueberryless-org/readme-tree-writer-all@v2
         with:
           config_path: .github/readmetreerc.yml
       - name: Commit if diff exists
@@ -181,11 +181,13 @@ jobs:
             git config user.name github-actions
             git config user.email github-actions@github.com
             git add .
-            git commit -m "commit by shirakiya/readme-tree-writer"
+            git commit -m "commit by trueberryless-org/readme-tree-writer-all"
             git push
           fi
 ```
 
 ## License
 
-The scripts and documentation in this project are released under the [MIT License](LICENSE)
+Licensed under the MIT license, Copyright © trueberryless.
+
+See [LICENSE](/LICENSE) for more information.

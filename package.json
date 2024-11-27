@@ -1,5 +1,5 @@
 {
-  "name": "readme-tree-writer",
+  "name": "readme-tree-writer-all",
   "version": "2.0.2",
   "private": true,
   "description": "GitHub Action to write the output of \"tree\" command to each README in your project.",
