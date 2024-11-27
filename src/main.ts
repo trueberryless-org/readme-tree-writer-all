@@ -30,7 +30,7 @@ const run = async () => {
       cwd: path.dirname(p),
       silent: true,
     }
-    await exec.exec("tree", ["--noreport", "-v", "."], options)
+    await exec.exec("tree", ["--noreport", "-v", "-a", "-I .git", "."], options)
 
     const treeResult = replaceTreeOutput(stdout)
 

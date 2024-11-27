@@ -1,10 +1,13 @@
+> This action originates from [shirakiya/readme-tree-writer](https://github.com/shirakiya/readme-tree-writer). The only difference is that this action includes all files except .git folder. See [this repos command execution](https://github.com/trueberryless-org/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs) vs [shirakiya's repos command execution](https://github.com/shirakiya/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs).
+
 # readme-tree-writer
+
 GitHub Action to write the output of "tree" command to each README in your project.
 
 Here is a [sample repository using this action](https://github.com/shirakiya/readme-tree-writer-sample).
 
-
 ## Usage
+
 Apply to `uses` in workflow config like below.
 
 ```yaml
@@ -15,7 +18,6 @@ Apply to `uses` in workflow config like below.
 
 This action is helpful to check for maintenance that there are any diff between written tree content in README and actual.
 Following workflow is an example to check the diff and fail workflow if the diff is exist.
-
 
 ```yaml
 name: Check tree diff
@@ -44,7 +46,7 @@ jobs:
 ### Action Inputs
 
 | input       | description                                                                          |
-|-------------|--------------------------------------------------------------------------------------|
+| ----------- | ------------------------------------------------------------------------------------ |
 | config_path | The path of configuration file for this action (default: `.github/readmetreerc.yml`) |
 
 ### Action Outputs
@@ -57,7 +59,7 @@ This action can be configured by YAML formatted file. It refers to `.github/read
 The parameters that can be set are listed below.
 
 | parameter   | description                                                                                                                                           |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `fileNames` | The list of file names that are scanned. (default: `README.md`)                                                                                       |
 | `chapter`   | The chapter name where this action writes tree output. Lines that starts with `#` are regarded (In other words `#`, `##`, `###` and so are included). |
 | `include`   | The list of directories that are scanned whether files named `fileNames` param are exist. (default: `.`)                                              |
@@ -76,13 +78,12 @@ exclude:
   - node_modules
 ```
 
-
 ## Details
 
 ### Feature
 
-This action writes the results of the `tree` command **in each directory where the README exists** to each README.  
-  
+This action writes the results of the `tree` command **in each directory where the README exists** to each README.
+
 For example, when the directory structure is as follows, the following is written in each README.
 
 ```
@@ -128,13 +129,12 @@ For example, when the directory structure is as follows, the following is writte
 
 ````
 
-
 ### tree and its outputs
 
 This action uses following command and options in each directory to get tree output.
 
 ```
-tree --noreport -v .
+tree --noreport -v -a -I .git .
 ```
 
 And writes the output to README file. You should pay attension to new lines.
@@ -155,14 +155,11 @@ And writes the output to README file. You should pay attension to new lines.
 
 ````
 
-
 ## Usecase
 
 Show example workflow settings for some usecase.
 
-
 ### Add a commit if differences by this action apprear
-
 
 ```yaml
 name: Add tree changes
@@ -189,6 +186,6 @@ jobs:
           fi
 ```
 
-
 ## License
+
 The scripts and documentation in this project are released under the [MIT License](LICENSE)

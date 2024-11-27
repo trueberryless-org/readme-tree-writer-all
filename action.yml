@@ -1,5 +1,5 @@
-name: readme-tree-writer
-author: shirakiya
+name: readme-tree-writer-all
+author: trueberryless
 description: GitHub Action to write the output of "tree" command to each README in your project.
 inputs:
   config_path:
