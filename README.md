@@ -11,7 +11,7 @@ Here is a [sample repository using the original action](https://github.com/shira
 Apply to `uses` in workflow config like below.
 
 ```yaml
-- uses: trueberryless-org/readme-tree-writer-all@v2
+- uses: trueberryless-org/readme-tree-writer-all@v1
 ```
 
 ### Example workflow
@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Write tree outputs to README.md
-        uses: trueberryless-org/readme-tree-writer-all@v2
+        uses: trueberryless-org/readme-tree-writer-all@v1
         with:
           config_path: .github/readmetreerc.yml
       - name: Check diff
@@ -172,7 +172,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Write tree outputs to README.md
-        uses: trueberryless-org/readme-tree-writer-all@v2
+        uses: trueberryless-org/readme-tree-writer-all@v1
         with:
           config_path: .github/readmetreerc.yml
       - name: Commit if diff exists
