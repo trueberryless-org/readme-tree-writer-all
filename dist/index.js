@@ -14532,7 +14532,7 @@ const run = () => __awaiter(void 0, void 0, void 0, function* () {
                 cwd: path.dirname(p),
                 silent: true,
             };
-            yield exec.exec("tree", ["--noreport", "-v", "-a", "-I .git", "."], options);
+            yield exec.exec("tree", ["--noreport", "-a", "-I", ".git", "."], options);
             const treeResult = (0, replace_1.replaceTreeOutput)(stdout);
             const result = yield writer.write({
                 path: p,
