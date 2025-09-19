@@ -1,4 +1,4 @@
-> This action originates from [shirakiya/readme-tree-writer](https://github.com/shirakiya/readme-tree-writer). The only difference is that this action includes all files except .git folder. See [this repos command execution](https://github.com/trueberryless-org/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs) vs [shirakiya's repos command execution](https://github.com/shirakiya/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs).
+> This action originates from [shirakiya/readme-tree-writer](https://github.com/shirakiya/readme-tree-writer). The only difference is that this action includes all files except .git folder. See [this repos command execution](https://github.com/trueberryless-org/readme-tree-writer-all#tree-and-its-outputs) vs [shirakiya's repos command execution](https://github.com/shirakiya/readme-tree-writer?tab=readme-ov-file#tree-and-its-outputs).
 
 # readme-tree-writer-all
 
